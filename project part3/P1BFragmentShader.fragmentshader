@@ -1,0 +1,20 @@
+#version 330 core
+
+in vec4 fragColor;
+in vec2 fragUV;
+
+out vec4 color;
+uniform sampler2D textureA;
+uniform int useTexture;
+
+void main()
+{
+    if (useTexture == 1)
+    {
+        color = texture(textureA, fragUV);
+    }
+    else
+    {
+        color = fragColor;
+    }
+}
